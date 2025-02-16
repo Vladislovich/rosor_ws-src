@@ -13,7 +13,7 @@ std_msgs::Int32MultiArray status_msg, prev_status_msg;
 bool joy_received = false;
 
 std::vector<int> counters {0};
-std::vector<int> tumblers {14, 1, 3, 5}; //rightstik(forward+around), butUP, circle(video rec), square(lowvideo)
+std::vector<int> tumblers {14, 1, 3, 5}; //rightstik(forward+around), butUP()forward, circle(video rec), square(lowvideo)
 
 // Функция для обновления данных кнопок (запускается при новом сообщении от джойстика)
 void joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
