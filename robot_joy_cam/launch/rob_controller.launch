@@ -1,0 +1,7 @@
+<launch>
+    <node name="rob_return" pkg="robot_joy_cam" type="rob_return" output="screen"/>
+
+    <node name="forward_wall" pkg="robot_joy_cam" type="forward_wall" output="screen"/>
+
+    <node name="image_push" pkg="robot_joy_cam" type="image_push" output="screen"/>
+</launch>

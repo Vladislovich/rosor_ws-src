@@ -1,0 +1,11 @@
+<launch>
+	<param name="robot_description" command="$(find xacro)/xacro '$(find robot_description)/urdf/robot.xacro' --inorder" />
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" />
+    <include file="$(find robot_control)/launch/robot_base.launch" />
+	<include file="$(find robot_control)/launch/robot_control.launch" />
+	<include file="$(find robot_driver)/launch/robot_drivers.launch" />
+
+	<!--<include file="$(find robot_joy_cam)/launch/rob_controller.launch" />-->
+	
+	<include file="$(find rplidar_ros)/launch/rplidar_a1.launch" />
+</launch>

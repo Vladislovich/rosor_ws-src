@@ -1,0 +1,11 @@
+<launch>
+    <node name="joy_driver" pkg="joy" type="joy_node" output="screen"/>
+    
+    <param name="linear_speed" value="0.09"/>
+    <param name="angular_speed" value="0.15"/>
+    <node name="joystick" pkg="robot_joy_cam" type="joystick" output="screen"/>
+
+    <node name="image_pop" pkg="robot_joy_cam" type="image_pop" output="screen"/>
+
+    <!--<node name="video_detector" pkg="robot_joy_cam" type="video_detector.py" output="screen"/>-->
+</launch>

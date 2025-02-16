@@ -1,0 +1,9 @@
+<launch>
+    <node name="serial_node" pkg="rosserial_python" type="serial_node.py" output="screen">
+        <param name="port" value="/dev/arduino_nano" />
+        <param name="baud" value="57600" />
+    </node>
+    <!--<include file="$(find robot_driver)/launch/robot_pid.launch" />-->
+    <node name="encoders" pkg="robot_driver" type="encoders.py" output="screen" />
+    <node name="my_pid" pkg="robot_driver" type="my_pid.py" output="screen" />
+</launch>

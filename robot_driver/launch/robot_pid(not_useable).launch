@@ -1,0 +1,30 @@
+<launch>
+	<node name="controller" pkg="pid" type="controller" ns="/robot/left_wheel" output="screen" >
+		<param name="node_name" value="left_wheel_pid" />
+		<param name="Kp" value="1.5" />
+		<param name="Ki" value="0.0" />
+		<param name="Kd" value="0.0" />
+		<param name="upper_limit" value="255" />
+		<param name="lower_limit" value="-255" />
+		<param name="windup_limit" value="255" />
+		<param name="max_loop_frequency" value="50.0" />
+		<param name="min_loop_frequency" value="50.0" />
+		<remap from="/robot/left_wheel/setpoint" to="/robot/left_wheel/target_velocity" />
+		<remap from="/robot/left_wheel/state" to="/robot/left_wheel/current_velocity" />
+		<remap from="/robot/left_wheel/control_effort" to="/robot/left_wheel/pwm" />
+	</node>
+	<node name="controller" pkg="pid" type="controller" ns="/robot/right_wheel" output="screen" >
+		<param name="node_name" value="right_wheel_pid" />
+		<param name="Kp" value="1.5" />
+		<param name="Ki" value="0.0" />
+		<param name="Kd" value="0.0" />
+		<param name="upper_limit" value="255" />
+		<param name="lower_limit" value="-255" />
+		<param name="windup_limit" value="255" />
+		<param name="max_loop_frequency" value="50.0" />
+		<param name="min_loop_frequency" value="50.0" />
+		<remap from="/robot/right_wheel/setpoint" to="/robot/right_wheel/target_velocity" />
+		<remap from="/robot/right_wheel/state" to="/robot/right_wheel/current_velocity" />
+		<remap from="/robot/right_wheel/control_effort" to="/robot/right_wheel/pwm" />
+	</node>
+</launch>

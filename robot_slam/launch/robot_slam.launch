@@ -1,0 +1,5 @@
+<launch>
+	<node pkg="gmapping" type="slam_gmapping" name="robot_slam_gmapping" output="log" >
+		<rosparam command="load" file="$(find robot_slam)/config/gmapping_params.yaml"/>
+	</node>
+</launch>

@@ -1,0 +1,8 @@
+<launch>
+  <!-- Загрузка параметров контроллеров из controller.yaml -->
+  <rosparam file="$(find robot_control)/config/controller.yaml" command="load" />
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+	args="joint_state_controller diff_drive_controller" ></node>
+
+</launch>
